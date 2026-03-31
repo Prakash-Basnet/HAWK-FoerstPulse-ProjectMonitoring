@@ -28,19 +28,15 @@ function updateCountdown() {
     document.getElementById('cd-days').textContent = '0';
     document.getElementById('cd-hours').textContent = '0';
     document.getElementById('cd-mins').textContent = '0';
-    document.getElementById('cd-secs').textContent = '0';
     return;
   }
 
   const days = Math.floor(diff / (1000 * 60 * 60 * 24));
   const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
   const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-  const secs = Math.floor((diff % (1000 * 60)) / 1000);
-
   document.getElementById('cd-days').textContent = days;
   document.getElementById('cd-hours').textContent = hours;
   document.getElementById('cd-mins').textContent = mins;
-  document.getElementById('cd-secs').textContent = secs;
 
   // Timeline progress
   const start = new Date(PROJECT.startDate);
@@ -51,7 +47,7 @@ function updateCountdown() {
 }
 
 updateCountdown();
-setInterval(updateCountdown, 1000);
+setInterval(updateCountdown, 30000); // Update every 30s (no seconds displayed)
 
 // ── Last Updated ──
 document.getElementById('lastUpdate').textContent = new Date(PROJECT.lastUpdated).toLocaleDateString('en-GB', {

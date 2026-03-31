@@ -7,7 +7,7 @@
   <meta name="description" content="Live progress tracker for HAWK's ForestPulse project tasks. Monitoring work packages, milestones, and deliverables.">
   <link href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700,900&f[]=general-sans@400,500,600,700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='14' fill='%23155E3B'/><path d='M16 6l-6 12h4v8l6-12h-4z' fill='%2334D399'/></svg>">
+  <link rel="icon" href="forestpulse-logo.png" type="image/png">
 </head>
 <body>
 
@@ -15,15 +15,13 @@
   <header class="header">
     <div class="header__inner">
       <div class="header__brand">
-        <svg class="header__logo" width="36" height="36" viewBox="0 0 36 36" fill="none" aria-label="ForestPulse Logo">
-          <circle cx="18" cy="18" r="16" fill="var(--color-primary)"/>
-          <path d="M18 7L11 21h5v8l7-14h-5z" fill="var(--color-bg)" stroke="var(--color-bg)" stroke-width="0.5" stroke-linejoin="round"/>
-          <circle cx="18" cy="18" r="16" fill="none" stroke="var(--color-primary)" stroke-width="1"/>
-        </svg>
-        <div>
+        <img src="forestpulse-logo.png" alt="ForestPulse Logo" class="header__logo-img">
+        <div class="header__brand-text">
           <span class="header__title">ForestPulse</span>
           <span class="header__subtitle">HAWK TASK TRACKER</span>
         </div>
+        <span class="header__divider"></span>
+        <img src="hawk-apple.png" alt="HAWK Logo" class="header__hawk-logo">
       </div>
       <div class="header__actions">
         <div class="header__status-badge">
@@ -63,11 +61,7 @@
               <span class="countdown-card__number" id="cd-mins">0</span>
               <span class="countdown-card__text">Minutes</span>
             </div>
-            <span class="countdown-card__sep">:</span>
-            <div class="countdown-card__unit">
-              <span class="countdown-card__number" id="cd-secs">0</span>
-              <span class="countdown-card__text">Seconds</span>
-            </div>
+
           </div>
           <div class="countdown-card__range">
             <span>01.01.2025</span>
@@ -207,18 +201,26 @@
           <div class="info-card">
             <h3>ForestPulse</h3>
             <p>Development of a Public Copernicus Service for Consistent and Regionalizable Tree Species, Vitality, and Structure Information for Germany's Forest Area</p>
+            <a href="https://forestpulse.thuenen.de/" target="_blank" rel="noopener" class="info-link">forestpulse.thuenen.de</a>
           </div>
           <div class="info-card">
             <h3>HAWK Partner</h3>
-            <p>Hochschule fur angewandte Wissenschaft und Kunst (HAWK)<br>
-            Faculty: Resource Management, Geoinformatics & Forest Planning<br>
+            <p>Hochschule f&uuml;r angewandte Wissenschaft und Kunst (HAWK)<br>
+            Faculty: Resource Management, Geoinformatics &amp; Forest Planning<br>
             PI: Prof. Dr. Paul Magdon</p>
+            <a href="https://www.hawk.de/de/forschung/forschungsprojekte/forestpulse" target="_blank" rel="noopener" class="info-link">hawk.de/forestpulse</a>
           </div>
           <div class="info-card">
-            <h3>Funding & Duration</h3>
-            <p>Funding: EUR 277,998.90<br>
-            Duration: 01.01.2025 -- 31.12.2027<br>
-            Location: Busgenweg 1a, 37077 Gottingen</p>
+            <h3>Wissenschaftlicher Mitarbeiter</h3>
+            <p>Dr. Prakash Basnet<br>
+            Fakult&auml;t Ressourcenmanagement<br>
+            <a href="mailto:prakash.basnet@hawk.de" class="info-email">prakash.basnet@hawk.de</a></p>
+          </div>
+          <div class="info-card">
+            <h3>Funding &amp; Duration</h3>
+            <p>Funding: &euro;277,998.90<br>
+            Duration: 01.01.2025 &ndash; 31.12.2027<br>
+            Location: B&uuml;sgenweg 1a, 37077 G&ouml;ttingen</p>
           </div>
         </div>
       </div>
@@ -230,6 +232,7 @@
     <div class="footer__inner">
       <p>ForestPulse HAWK Task Tracker &middot; Personal Progress Dashboard</p>
       <p class="footer__sub">Data based on HAWK Tasks and Responsibilities document. All statuses are self-assessed.</p>
+      <p class="footer__credit">Built by Dr. Prakash Basnet</p>
     </div>
   </footer>
 
