@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ForestPulse | HAWK Task Progress Tracker</title>
+  <meta name="description" content="Live progress tracker for HAWK's ForestPulse project tasks. Monitoring work packages, milestones, and deliverables.">
+  <link href="https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700,900&f[]=general-sans@400,500,600,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><circle cx='16' cy='16' r='14' fill='%23155E3B'/><path d='M16 6l-6 12h4v8l6-12h-4z' fill='%2334D399'/></svg>">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="header__inner">
+      <div class="header__brand">
+        <svg class="header__logo" width="36" height="36" viewBox="0 0 36 36" fill="none" aria-label="ForestPulse Logo">
+          <circle cx="18" cy="18" r="16" fill="var(--color-primary)"/>
+          <path d="M18 7L11 21h5v8l7-14h-5z" fill="var(--color-bg)" stroke="var(--color-bg)" stroke-width="0.5" stroke-linejoin="round"/>
+          <circle cx="18" cy="18" r="16" fill="none" stroke="var(--color-primary)" stroke-width="1"/>
+        </svg>
+        <div>
+          <span class="header__title">ForestPulse</span>
+          <span class="header__subtitle">HAWK TASK TRACKER</span>
+        </div>
+      </div>
+      <div class="header__actions">
+        <div class="header__status-badge">
+          <span class="pulse-dot"></span>
+          Monitoring Active
+        </div>
+        <button data-theme-toggle aria-label="Switch to dark mode">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+      <div class="hero__inner">
+        <h1 class="hero__title">HAWK ForestPulse<br>Work Package Tracker</h1>
+        <p class="hero__desc">Independent monitoring of HAWK's tasks in the ForestPulse project. Every work package tracked. Every milestone assessed.</p>
+
+        <!-- COUNTDOWN TIMER -->
+        <div class="countdown-card">
+          <div class="countdown-card__label">Project End Countdown</div>
+          <div class="countdown-card__timer" id="countdown">
+            <div class="countdown-card__unit">
+              <span class="countdown-card__number" id="cd-days">0</span>
+              <span class="countdown-card__text">Days</span>
+            </div>
+            <span class="countdown-card__sep">:</span>
+            <div class="countdown-card__unit">
+              <span class="countdown-card__number" id="cd-hours">0</span>
+              <span class="countdown-card__text">Hours</span>
+            </div>
+            <span class="countdown-card__sep">:</span>
+            <div class="countdown-card__unit">
+              <span class="countdown-card__number" id="cd-mins">0</span>
+              <span class="countdown-card__text">Minutes</span>
+            </div>
+            <span class="countdown-card__sep">:</span>
+            <div class="countdown-card__unit">
+              <span class="countdown-card__number" id="cd-secs">0</span>
+              <span class="countdown-card__text">Seconds</span>
+            </div>
+          </div>
+          <div class="countdown-card__range">
+            <span>01.01.2025</span>
+            <div class="countdown-card__progress">
+              <div class="countdown-card__progress-fill" id="timeline-progress"></div>
+            </div>
+            <span>31.12.2027</span>
+          </div>
+        </div>
+
+        <p class="hero__updated">Last updated: <time id="lastUpdate"></time></p>
+      </div>
+    </section>
+
+    <!-- STATS ROW -->
+    <section class="stats" aria-label="Task summary statistics">
+      <div class="stats__inner">
+        <div class="stat-card stat-card--total">
+          <span class="stat-card__number" id="stat-total">0</span>
+          <span class="stat-card__label">Total Tasks</span>
+        </div>
+        <div class="stat-card stat-card--completed">
+          <span class="stat-card__number" id="stat-completed">0</span>
+          <span class="stat-card__label">Completed</span>
+        </div>
+        <div class="stat-card stat-card--inprogress">
+          <span class="stat-card__number" id="stat-inprogress">0</span>
+          <span class="stat-card__label">In Progress</span>
+        </div>
+        <div class="stat-card stat-card--notstarted">
+          <span class="stat-card__number" id="stat-notstarted">0</span>
+          <span class="stat-card__label">Not Started</span>
+        </div>
+        <div class="stat-card stat-card--stalled">
+          <span class="stat-card__number" id="stat-stalled">0</span>
+          <span class="stat-card__label">Stalled</span>
+        </div>
+        <div class="stat-card stat-card--broken">
+          <span class="stat-card__number" id="stat-broken">0</span>
+          <span class="stat-card__label">Broken</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- OVERALL PROGRESS -->
+    <section class="overall-progress">
+      <div class="overall-progress__inner">
+        <h2>Overall Progress</h2>
+        <div class="progress-ring-container">
+          <svg class="progress-ring" viewBox="0 0 160 160">
+            <circle class="progress-ring__bg" cx="80" cy="80" r="70" fill="none" stroke-width="12"/>
+            <circle class="progress-ring__fill" id="progress-ring-fill" cx="80" cy="80" r="70" fill="none" stroke-width="12" stroke-linecap="round" transform="rotate(-90 80 80)"/>
+          </svg>
+          <span class="progress-ring__value" id="progress-percent">0%</span>
+        </div>
+        <div class="progress-bar-outer">
+          <div class="progress-bar-fill" id="progress-bar-fill"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CATEGORY PROGRESS -->
+    <section class="category-section">
+      <div class="category-section__inner">
+        <h2>Progress by Work Package</h2>
+        <div class="category-grid" id="categoryGrid"></div>
+      </div>
+    </section>
+
+    <!-- FILTER / TASK LIST -->
+    <section class="tasks-section">
+      <div class="tasks-section__inner">
+        <h2>All Tasks</h2>
+        <div class="filters">
+          <div class="filter-group">
+            <label class="filter-label">Status</label>
+            <div class="filter-buttons" id="statusFilters">
+              <button class="filter-btn active" data-filter="all">All</button>
+              <button class="filter-btn" data-filter="completed">Completed</button>
+              <button class="filter-btn" data-filter="in-progress">In Progress</button>
+              <button class="filter-btn" data-filter="not-started">Not Started</button>
+              <button class="filter-btn" data-filter="stalled">Stalled</button>
+              <button class="filter-btn" data-filter="broken">Broken</button>
+            </div>
+          </div>
+          <div class="filter-group">
+            <label class="filter-label">Work Package</label>
+            <select class="filter-select" id="categoryFilter">
+              <option value="all">All Work Packages</option>
+            </select>
+          </div>
+          <div class="filter-group">
+            <label class="filter-label">Search</label>
+            <input type="search" class="filter-search" id="searchInput" placeholder="Search tasks...">
+          </div>
+        </div>
+        <div class="tasks-list" id="tasksList"></div>
+        <p class="tasks-empty" id="tasksEmpty" style="display:none;">No tasks match your filters.</p>
+      </div>
+    </section>
+
+    <!-- METHODOLOGY -->
+    <section class="methodology">
+      <div class="methodology__inner">
+        <h2>Status Methodology</h2>
+        <p class="methodology__desc">Each task is tracked against HAWK's project milestones and deliverables defined in the ForestPulse work plan (01.01.2025 -- 31.12.2027).</p>
+        <div class="methodology-grid">
+          <div class="methodology-card">
+            <span class="status-badge status-badge--not-started">Not Started</span>
+            <p>No visible activity or output yet for this task.</p>
+          </div>
+          <div class="methodology-card">
+            <span class="status-badge status-badge--in-progress">In Progress</span>
+            <p>Active development, data processing, or research underway.</p>
+          </div>
+          <div class="methodology-card">
+            <span class="status-badge status-badge--completed">Completed</span>
+            <p>Task fully delivered with outputs verified and documented.</p>
+          </div>
+          <div class="methodology-card">
+            <span class="status-badge status-badge--broken">Broken</span>
+            <p>Deadline passed or task abandoned without completion.</p>
+          </div>
+          <div class="methodology-card">
+            <span class="status-badge status-badge--stalled">Stalled</span>
+            <p>Progress halted due to dependencies, data, or resources.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECT INFO -->
+    <section class="project-info">
+      <div class="project-info__inner">
+        <h2>Project Details</h2>
+        <div class="info-grid">
+          <div class="info-card">
+            <h3>ForestPulse</h3>
+            <p>Development of a Public Copernicus Service for Consistent and Regionalizable Tree Species, Vitality, and Structure Information for Germany's Forest Area</p>
+          </div>
+          <div class="info-card">
+            <h3>HAWK Partner</h3>
+            <p>Hochschule fur angewandte Wissenschaft und Kunst (HAWK)<br>
+            Faculty: Resource Management, Geoinformatics & Forest Planning<br>
+            PI: Prof. Dr. Paul Magdon</p>
+          </div>
+          <div class="info-card">
+            <h3>Funding & Duration</h3>
+            <p>Funding: EUR 277,998.90<br>
+            Duration: 01.01.2025 -- 31.12.2027<br>
+            Location: Busgenweg 1a, 37077 Gottingen</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="footer__inner">
+      <p>ForestPulse HAWK Task Tracker &middot; Personal Progress Dashboard</p>
+      <p class="footer__sub">Data based on HAWK Tasks and Responsibilities document. All statuses are self-assessed.</p>
+    </div>
+  </footer>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
