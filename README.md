@@ -1,4 +1,4 @@
-# ForestPulse — HAWK Task Progress Tracker
+# ForestPulse-HAWK Task Progress Tracker
 
 Live progress dashboard for HAWK's work packages in the [ForestPulse](https://forestpulse.thuenen.de/) project.
 
