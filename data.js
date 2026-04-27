@@ -71,7 +71,7 @@ const TASKS = [
     task: "Task 4.1",
     title: "ALS Data Preprocessing & Homogenization",
     description: "Preprocess and homogenize ALS datasets from DigiZ-DE and other sources",
-    status: "in-progress",
+    status: "completed",
     partners: ["HAWK", "TI"],
     year: "2025"
   },
@@ -81,7 +81,7 @@ const TASKS = [
     task: "Task 4.1",
     title: "Outlier Analysis & Point Cloud Classification",
     description: "Perform outlier analysis and point cloud classification on ALS data",
-    status: "in-progress",
+    status: "completed",
     partners: ["HAWK", "TI"],
     year: "2025"
   },
@@ -91,7 +91,7 @@ const TASKS = [
     task: "Task 4.1",
     title: "Point Density Standardization",
     description: "Standardize point cloud densities and acquisition angles across datasets",
-    status: "in-progress",
+    status: "completed",
     partners: ["HAWK", "TI"],
     year: "2025"
   },
@@ -111,7 +111,7 @@ const TASKS = [
     task: "Task 4.1",
     title: "Height Normalization",
     description: "Perform height normalization of point clouds using generated DTMs",
-    status: "in-progress",
+    status: "completed",
     partners: ["HAWK", "TI"],
     year: "2025"
   },
@@ -131,7 +131,7 @@ const TASKS = [
     task: "Task 4.1",
     title: "Large ALS Dataset Processing Software",
     description: "Develop efficient software for managing and processing large ALS datasets",
-    status: "in-progress",
+    status: "completed",
     partners: ["HAWK"],
     year: "2025-2026"
   },
@@ -143,7 +143,7 @@ const TASKS = [
     task: "Task 4.2",
     title: "3D Point Cloud Metrics Extraction",
     description: "Extract statistical metrics from 3D point clouds for 10m x 10m grid cells",
-    status: "in-progress",
+    status: "completed",
     partners: ["TI", "HAWK"],
     year: "2025-2026"
   },
@@ -153,7 +153,7 @@ const TASKS = [
     task: "Task 4.2",
     title: "Height & Density Distribution Metrics",
     description: "Develop metrics describing height and point class distributions",
-    status: "not-started",
+    status: "completed",
     partners: ["TI", "HAWK"],
     year: "2026"
   },
