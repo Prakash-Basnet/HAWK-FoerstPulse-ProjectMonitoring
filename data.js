@@ -28,7 +28,7 @@ const TASKS = [
     task: "Task 3.2",
     title: "Tree Species Classification",
     description: "Collaborate with UT and TI to utilize spectral reference database based on Federal Forest Inventory (BWI) plots",
-    status: "in-progress",
+    status: "completed",
     partners: ["UT", "HAWK"],
     year: "2025-2026"
   },
@@ -38,7 +38,7 @@ const TASKS = [
     task: "Task 3.2",
     title: "Data Augmentation Strategies",
     description: "Contribute to development of data augmentation strategies for generating synthetic mixed spectral signatures",
-    status: "in-progress",
+    status: "completed",
     partners: ["UT", "HAWK"],
     year: "2025-2026"
   },
@@ -48,7 +48,7 @@ const TASKS = [
     task: "Task 3.2",
     title: "AI Tree Species Abundance Estimation",
     description: "Test and validate tree species abundance estimation using AI methods (neural networks)",
-    status: "not-started",
+    status: "in-progress",
     partners: ["UT", "HAWK"],
     year: "2026-2027"
   },
@@ -58,7 +58,7 @@ const TASKS = [
     task: "Task 3.2",
     title: "Continuous Abundance Estimates",
     description: "Support generation of continuous abundance estimates for tree species using spectral unmixing",
-    status: "not-started",
+    status: "in-progress",
     partners: ["UT", "HAWK"],
     year: "2026-2027"
   },
@@ -121,7 +121,7 @@ const TASKS = [
     task: "Task 4.1",
     title: "FORCE Grid Alignment",
     description: "Align ALS data to the FORCE grid (10m x 10m cells) for spatial consistency with Sentinel-2 products",
-    status: "not-started",
+    status: "completed",
     partners: ["HAWK", "TI"],
     year: "2025-2026"
   },
@@ -163,7 +163,7 @@ const TASKS = [
     task: "Task 4.2",
     title: "BWI Training Dataset Linkage",
     description: "Link point cloud metrics with field measurements from BWI and other inventories to create training datasets",
-    status: "not-started",
+    status: "in-progress",
     partners: ["TI", "HAWK"],
     year: "2026"
   },
@@ -173,7 +173,7 @@ const TASKS = [
     task: "Task 4.2",
     title: "AI Forest Structure Modeling",
     description: "Apply AI methods to model relationships between point cloud metrics and forest structure parameters",
-    status: "not-started",
+    status: "in-progress",
     partners: ["TI", "HAWK"],
     year: "2026-2027"
   },
@@ -183,7 +183,7 @@ const TASKS = [
     task: "Task 4.2",
     title: "Wall-to-Wall Structure Predictions",
     description: "Generate wall-to-wall predictions of forest structure parameters for all forest pixels",
-    status: "not-started",
+    status: "completed",
     partners: ["TI", "HAWK"],
     year: "2026-2027"
   },
@@ -237,7 +237,7 @@ const TASKS = [
     task: "Task 4.4",
     title: "Individual Tree Detection",
     description: "Develop and refine methods for individual tree detection in ALS data",
-    status: "not-started",
+    status: "in-progress",
     partners: ["HAWK", "TI"],
     year: "2026-2027"
   },
@@ -247,7 +247,7 @@ const TASKS = [
     task: "Task 4.4",
     title: "Crown Segmentation",
     description: "Segment individual tree crowns from point clouds and extract quantitative crown parameters",
-    status: "not-started",
+    status: "completed",
     partners: ["HAWK", "TI"],
     year: "2026-2027"
   },
@@ -257,7 +257,7 @@ const TASKS = [
     task: "Task 4.4",
     title: "Crown Segmentation Plausibility",
     description: "Implement post-processing procedures to test and correct crown segmentation plausibility",
-    status: "not-started",
+    status: "in-progress",
     partners: ["HAWK", "TI"],
     year: "2027"
   },
@@ -289,7 +289,7 @@ const TASKS = [
     task: "Task 5.1",
     title: "Spatial Consistency of Layers",
     description: "Collaborate on ensuring spatial consistency of all information layers",
-    status: "not-started",
+    status: "in-progress",
     partners: ["UT", "HAWK"],
     year: "2027"
   },
@@ -309,7 +309,7 @@ const TASKS = [
     task: "Task 5.1",
     title: "FORCE Grid Spatial Reference",
     description: "Ensure ALS-derived products are processed with FORCE grid as spatial reference",
-    status: "in-progress",
+    status: "completed",
     partners: ["UT", "HAWK"],
     year: "2025-2027"
   },
@@ -321,7 +321,7 @@ const TASKS = [
     task: "Task 8.1",
     title: "Validation Statistics Development",
     description: "Contribute to development of validation statistics (confusion matrices, RMSE, bias, etc.)",
-    status: "not-started",
+    status: "in-progress",
     partners: ["FVA", "HAWK", "TI", "UT"],
     year: "2026-2027"
   },
@@ -331,7 +331,7 @@ const TASKS = [
     task: "Task 8.1",
     title: "Balanced Sampling Designs",
     description: "Implement balanced sampling designs for splitting reference data into training and validation sets",
-    status: "not-started",
+    status: "in-progress",
     partners: ["FVA", "HAWK", "TI", "UT"],
     year: "2026-2027"
   },
@@ -361,7 +361,7 @@ const TASKS = [
     task: "Task 8.3",
     title: "Unreliable Prediction Masking",
     description: "Identify and mask/mark geographic areas where trained models cannot make reliable predictions",
-    status: "not-started",
+    status: "in-progress",
     partners: ["HAWK", "UT"],
     year: "2027"
   },
@@ -383,7 +383,7 @@ const TASKS = [
     task: "Task 10.3",
     title: "GitHub Repos & Tutorials",
     description: "Contribute to GitHub repositories, wikis, and tutorials for open-source code and methods",
-    status: "in-progress",
+    status: "completed",
     partners: ["UT", "TI", "HAWK"],
     year: "2025-2027"
   },
@@ -393,7 +393,7 @@ const TASKS = [
     task: "Task 10.3",
     title: "Metadata Catalogs",
     description: "Create metadata catalogs for HAWK-generated products ensuring data discoverability",
-    status: "not-started",
+    status: "in-progress",
     partners: ["UT", "TI", "HAWK"],
     year: "2026-2027"
   },
@@ -413,7 +413,7 @@ const TASKS = [
     task: "Task 10.4",
     title: "Conference Presentations",
     description: "Present findings at national and international conferences",
-    status: "not-started",
+    status: "completed",
     partners: ["UT", "HAWK", "TI"],
     year: "2025-2027"
   },
@@ -423,7 +423,7 @@ const TASKS = [
     task: "Task 10.4",
     title: "Open Data Publication",
     description: "Make generated data products openly and freely available (CC-BY 4.0) on CODE-DE, DigiZ-DE, Zenodo",
-    status: "not-started",
+    status: "in-progress",
     partners: ["UT", "HAWK", "TI"],
     year: "2027"
   },
@@ -455,7 +455,7 @@ const TASKS = [
     task: "Deliverable",
     title: "Forest Structure Parameter Maps (10m)",
     description: "Basal area, timber volume, crown cover, stand top height, vertical structure maps at 10m resolution",
-    status: "not-started",
+    status: "in-progress",
     partners: ["HAWK", "TI"],
     year: "2026-2027"
   },
@@ -475,7 +475,7 @@ const TASKS = [
     task: "Deliverable",
     title: "Individual Tree Detection Products",
     description: "Tree detection, crown segmentation, and crown parameter datasets from ALS",
-    status: "not-started",
+    status: "in-progress",
     partners: ["HAWK", "TI"],
     year: "2027"
   },
